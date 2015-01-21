@@ -11,12 +11,12 @@ var credentials = {
 
 var computeManagementClient = computeManagement.createComputeManagementClient(computeManagement.createCertificateCloudCredentials(credentials));
 
-// List all the virtual machine images you can use.
+// List the first image I can use
 // added 'VM'
 computeManagementClient.virtualMachineVMImages.list(function (err, result) {
   if (err) {
     console.error(err);
   } else {
-    console.info(result);
+    console.info(result.vMImages[0]);
   }
 });
